@@ -16,7 +16,7 @@ function App() {
     // Initial check
     const checkTime = () => {
       const currentHour = moment().hours();
-      setIsDay(currentHour >= 6 && currentHour < 18); // Daytime between 6AM and 6PM
+      setIsDay(currentHour >= 6 && currentHour < 19); // Daytime between 6AM and 6PM
     };
 
     checkTime(); // Check immediately
