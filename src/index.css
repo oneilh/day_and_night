@@ -191,8 +191,8 @@ main {
   justify-content: right;
 }
 .toggle_btn {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
   border: 1px solid #ffd700;
   display: flex;
