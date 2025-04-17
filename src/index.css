@@ -201,6 +201,15 @@ main {
   background-color: rgb(255, 136, 0);
   box-shadow: 0 0 50px rgb(255, 136, 0, 0.8);
 }
+.toggle_btn {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.toggle_btn:active {
+  transform: scale(0.98);
+}
 .toogle_btn__moon {
   border: 1px solid rgb(75, 74, 67);
   background-color: rgb(27, 27, 27);
