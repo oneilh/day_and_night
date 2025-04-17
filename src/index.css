@@ -1,0 +1,227 @@
+body.day-theme {
+  /* background: linear-gradient(to top, #87ceeb, #e0f7fa); */
+  background-color: #e0f7fa;
+  transition: background 1s ease-in-out;
+}
+
+body.night-theme {
+  /* background: linear-gradient(to top, #0d1b2a, #0a2437); */
+  background-color: #0a2437;
+  transition: background 1s ease-in-out;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cursor {
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  gap: 6rem;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.world {
+  position: relative;
+  width: 100%;
+  /* max-width: 800px; */
+  height: 500px;
+  border: 1px solid rgb(75, 74, 67);
+  box-shadow: 0 0 50px rgba(75, 74, 67, 0.3);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-color: #87ceeb;
+  background: linear-gradient(to top, #87ceeb, #e0f7fa);
+  transition: background-color 1.5s ease-in-out;
+  overflow: hidden;
+}
+.world_night {
+  background-color: #0d1b2a;
+  background: linear-gradient(to top, #0d1b2a, #0a2437);
+}
+/* --- chat gpt---- */
+.world,
+.world_night {
+  transition: background-color 1.5s ease-in-out;
+}
+/* --- chat gpt end---- */
+
+.landscape {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* Night */
+.moon {
+  position: absolute;
+  top: 20%;
+  left: 75%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  animation: moveStars 100s linear infinite;
+}
+@keyframes moveStars {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.sun,
+.moon {
+  transition: all 2s ease-in-out;
+}
+/* Day */
+.sun {
+  position: absolute;
+  top: 15%; /* Moved slightly higher */
+  left: 70%; /* Moved slightly left */
+  width: 80px; /* Slightly larger */
+  height: 80px;
+  border-radius: 50%;
+  background: #ffd700;
+  box-shadow: 0 0 50px rgba(255, 223, 0, 0.8);
+}
+
+/* ---- chatgpt input---- */
+/* --float sun and moon-- */
+
+.sun {
+  animation: floatSun 10s infinite alternate ease-in-out;
+}
+
+@keyframes floatSun {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.birds {
+  height: 50px;
+  object-fit: contain;
+  transform: rotate(180deg);
+  position: relative;
+  /* right: 100px; */
+  left: -100px;
+  top: 0;
+  animation: moveRight 16s linear infinite;
+}
+
+@keyframes moveRight {
+  from {
+    left: -100px;
+    top: 0;
+  }
+  to {
+    left: calc(100% + 100px);
+    top: -120px;
+  }
+}
+
+/* night */
+.moon {
+  animation: floatMoon 12s infinite alternate ease-in-out;
+}
+
+@keyframes floatMoon {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+/* --float sun and moon end-- */
+
+/* --twinkle stars-- */
+.stars::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  top: 20%;
+  left: 30%;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+/* --twinkle stars end-- */
+
+/* == controls == */
+.config {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: right;
+}
+.toggle_btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid #ffd700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 136, 0);
+  box-shadow: 0 0 50px rgb(255, 136, 0, 0.8);
+}
+.toogle_btn__moon {
+  border: 1px solid rgb(75, 74, 67);
+  background-color: rgb(27, 27, 27);
+  box-shadow: 0 0 50px rgb(75, 74, 67, 0.8);
+  box-shadow: 0 0 50px rgb(240, 255, 255, 0.3);
+}
+.icon_btn {
+  height: 20px;
+  color: white;
+}
+.icon_sun {
+  height: 24px;
+  color: white;
+}
+
+/*===== desktop =====*/
+@media screen and (min-width: 720px) {
+  /* main {
+    flex-direction: row;
+  } */
+  .world {
+    height: 700px;
+  }
+}
