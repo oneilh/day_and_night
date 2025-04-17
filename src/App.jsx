@@ -15,8 +15,7 @@ function App() {
   useEffect(() => {
     // Initial check
     const checkTime = () => {
-      // const currentHour = moment().hours();
-      const currentHour = 19;
+      const currentHour = moment().hours();
       setIsDay(currentHour >= 6 && currentHour < 18); // Daytime between 6AM and 6PM
     };
 
